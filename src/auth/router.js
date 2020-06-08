@@ -10,6 +10,12 @@ router.post('/signup',signup);
 router.post('/signin',basicAuth,signin);
 router.get('/users',list);
 
+/**
+ * 
+ * @param {obj} req 
+ * @param {obj} res 
+ * @param {function} next 
+ */
 function signup(req, res, next) {
   //sign up route if we have the user, return failure, else return generated token.
   let user = req.body;
@@ -25,13 +31,22 @@ function signup(req, res, next) {
   });
 }
 
+/**
+ * @param {obj} req 
+ * @param {obj} res 
+ * @param {function} next 
+ */
 // check this username if the password submitted matches the encrypted one we have saved in our db
 function signin(req, res, next) {
   res.cookie(req.token);
   res.status(200).send(req.token); // return token 4
 }
 
-
+/**
+ * @param {obj} req 
+ * @param {obj} res 
+ * @param {function} next 
+ */
 function list(req, res, next) {
   users.list(undefined).then(result => {
     console.log('prove of life');

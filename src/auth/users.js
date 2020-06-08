@@ -14,7 +14,9 @@ let users = {}; //exporting
 // save the password as hashed.
 // 2- Mongoose : hooks pre hook. : https://mongoosejs.com/docs/middleware.html#pre
 
-
+/**
+ * @param(obj)
+ */
 users.save = async function(record){
   let reading = await mongoDB.read(record.username);
   if (!reading[0]) {
@@ -26,7 +28,9 @@ users.save = async function(record){
   return Promise.reject();
 };
 
-
+/**
+ * @param(string)
+ */
 // compare the password with the encrypted one
 users.authenticateBasic = async function(username, password) {
   // let reading = await mongoDB.read(record.username);
@@ -39,6 +43,9 @@ users.authenticateBasic = async function(username, password) {
   return valid ? username : Promise.reject();
 };
 
+/**
+ * @param(obj)
+ */
 users.generateToken = function (user) {
   let token = jwt.sign({username: user.username}, SECRET );
   return token;

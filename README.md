@@ -7,7 +7,7 @@
 
 ### Links and Resources
 
-* [submission PR](https://github.com/Abdallah-401-advanced-javascript/api-server/pull/6)
+* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/1)
 * [travis](https://github.com/Abdallah-401-advanced-javascript/api-server/pull/6/checks?check_run_id=736987434)
 * [ci/cd](https://github.com/Abdallah-401-advanced-javascript/api-server/pull/6/checks?check_run_id=736990002)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
@@ -15,20 +15,18 @@
 
 ### Documentation
 <!-- * [jsdoc](https://abdallah-lab-00.herokuapp.com/docs/) -->
-* [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1) 
+<!-- * [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1)  -->
 
 ### Modules
-#### `pro-ca-routers.js` , `500.js`, `404.js`, `model.js`, `categories-model.js`, `products-model.js`,`timestamp.js`
+#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`
 ##### Exported Values and Methods
 
 ###### `node index.js `
 This will start listening.
-###### `pro-ca-routers.js.js`
-This will send request to the products/categories crud handler `products-model.js`/`categories-model.js`
-###### `products-model.js`
-This will connect the main crud handler `model.js` with the products schema `products-schema.js`
-###### `categories-model.js`
-This will connect the main crud handler `model.js` with the categories schema `categories-schema.js`
+###### `router`
+This will send request to the user crud handler `users-model.js`
+###### `users-model.js`
+This will connect the main crud handler `model.js` with the products schema `users-schema.js`
 ###### `model.js`
 This is the main crud handler.
 ###### `timestamp.js`
@@ -37,12 +35,15 @@ This Will log the date for the request to the terminal.
 This will console for not exist route.
 ###### `500.js`
 This will console the server errors.
+###### `basic-auth-midddleware.js`
+This will authinticate the login process
 
 ### Setup
 
 #### `.env` requirements 
 const PORT = port || process.env.PORT || 3000;
 MONGODB_URI=mongodb://localhost:27017/class-08-db;
+SECRET=ysecrettokenkey
 
 #### How to initialize/run your application 
 
@@ -51,6 +52,7 @@ MONGODB_URI=mongodb://localhost:27017/class-08-db;
 
 #### How to use your library (where applicable)
 <!-- * use const lib=require('lib') -->
+const basic = require(../'basic-auth-midddleware.js');
 const Model = require('../model');
 const productsRouter = require('../routes/products');
 const categoriesRouter = require('../routes/categories');
@@ -68,4 +70,4 @@ const err404 = require('../middleware/404.js');
 
 #### UML
 
-![UML Diagram](whiteboardclass09.jpg)
+![UML Diagram](whiteboardclass11.jpg)
