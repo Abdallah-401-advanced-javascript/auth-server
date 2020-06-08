@@ -27,18 +27,18 @@ describe('Server API', ()=> {
         expect(results.status).toBe(200);
       });
   });
-  it('it can post() signup ', ()=> {
-    let obj = {
-      'username': 'alaads',
-      'password': '123asssdd',
-    };
-    return mockRequest
-      .post('/signup')
-      .send(obj)
-      .then(data => {
-        expect(data.status).toBe(200);
-      });
-  });
+  //   it('it can post() signup ', ()=> {
+  //     let obj = {
+  //       'username': 'alaads',
+  //       'password': '123asssdd',
+  //     };
+  //     return mockRequest
+  //       .post('/signup')
+  //       .send(obj)
+  //       .then(data => {
+  //         expect(data.status).toBe(200);
+  //       });
+  //   });
 
   // it('can post()  signin ', ()=> {
   //   let obj = {
