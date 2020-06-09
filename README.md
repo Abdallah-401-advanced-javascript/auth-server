@@ -7,9 +7,9 @@
 
 ### Links and Resources
 
-* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/1)
-* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/1/checks?check_run_id=748237352)
-* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/runs/748237605?check_suite_focus=true)
+* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2)
+* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2/checks?check_run_id=752039499)
+* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2/checks?check_run_id=752040894)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
 <!-- * [front-end application](https://abdallah-lab-00.herokuapp.com/)  -->
 
