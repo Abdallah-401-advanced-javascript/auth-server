@@ -4,12 +4,15 @@ const express = require('express');
 const router = express.Router();
 const users = require('./users');
 const basicAuth = require('./middleware/basic-auth-middleware');
+const oath = require('./middleware/oauth-middleware');
 // const mongoDB = require('./models/users/users-model');
 
 router.post('/signup',signup);
 router.post('/signin',basicAuth,signin);
 router.get('/users',list);
-
+router.get('/oauth', oath, (req, res)=> {
+  res.status(200).send(req.token);
+});
 /**
  * 
  * @param {obj} req 
@@ -57,6 +60,7 @@ function list(req, res, next) {
     res.status(403).send('Listing error');
   });
 }
+
 
 module.exports = router;
 
