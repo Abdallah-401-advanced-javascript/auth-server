@@ -1,15 +1,15 @@
-# LAB - 11
+# LAB - 12
 
 <!-- ## Project: Project Name Here -->
-## Authentication
+## OAuth Server
 
 ### Author: Abdallah Obaid
 
 ### Links and Resources
 
-* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/1)
-* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/1/checks?check_run_id=748237352)
-* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/runs/748237605?check_suite_focus=true)
+* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2)
+* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2/checks?check_run_id=752039499)
+* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/2/checks?check_run_id=752040894)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
 <!-- * [front-end application](https://abdallah-lab-00.herokuapp.com/)  -->
 
@@ -18,7 +18,7 @@
 <!-- * [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1)  -->
 
 ### Modules
-#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`
+#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js` 
 ##### Exported Values and Methods
 
 ###### `node index.js `
@@ -37,13 +37,21 @@ This will console for not exist route.
 This will console the server errors.
 ###### `basic-auth-midddleware.js`
 This will authinticate the login process
+###### `oauth-middleware.js`
+This will make an authorization for the client from third-party.
 
 ### Setup
 
 #### `.env` requirements 
-const PORT = port || process.env.PORT || 3000;
-MONGODB_URI=mongodb://localhost:27017/class-08-db;
+PORT=3030
+MONGODB_URI=mongodb://localhost:27017/class-11-db
 SECRET=ysecrettokenkey
+CLIENT_ID=7d4f153cec56a80adbbc
+CLIENT_SECRET=d5330f11d3fb407e0308061307cb688dac938c82
+TOKEN_SERVER_URL=https://github.com/login/oauth/access_token
+REMOTE_USER_API=https://api.github.com/user
+API_SERVER=http://localhost:3030/oauth
+
 
 #### How to initialize/run your application 
 
@@ -54,10 +62,8 @@ SECRET=ysecrettokenkey
 <!-- * use const lib=require('lib') -->
 const basic = require(../'basic-auth-midddleware.js');
 const Model = require('../model');
-const productsRouter = require('../routes/products');
-const categoriesRouter = require('../routes/categories');
-const products = require('../models/products/products-model');
-const categories = require('../models/categories/categories-model');
+const users = require('../models/products/users-model');
+const oauth = require('../oauth-middleware');
 const err500 = require('../middleware/500.js');
 const err404 = require('../middleware/404.js');
 
@@ -70,4 +76,4 @@ const err404 = require('../middleware/404.js');
 
 #### UML
 
-![UML Diagram](whiteboardclass11.jpg)
+![UML Diagram](whiteboardclass12.jpg)
