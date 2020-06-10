@@ -18,7 +18,7 @@
 <!-- * [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1)  -->
 
 ### Modules
-#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js` 
+#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js`, `bearer-auth-middleware.js`.
 ##### Exported Values and Methods
 
 ###### `node index.js `
@@ -39,6 +39,8 @@ This will console the server errors.
 This will authinticate the login process
 ###### `oauth-middleware.js`
 This will make an authorization for the client from third-party.
+###### `bearer-auth-middleware.js`
+This middleware will use baerer jwt to check authorization for the client before send it to the main function in the route.
 
 ### Setup
 
@@ -61,9 +63,10 @@ API_SERVER=http://localhost:3030/oauth
 #### How to use your library (where applicable)
 <!-- * use const lib=require('lib') -->
 const basic = require(../'basic-auth-midddleware.js');
+const oauth = require('../oauth-middleware');
+const bearerMiddleware = require('../bearer-auth-middleware');
 const Model = require('../model');
 const users = require('../models/products/users-model');
-const oauth = require('../oauth-middleware');
 const err500 = require('../middleware/500.js');
 const err404 = require('../middleware/404.js');
 
@@ -76,4 +79,4 @@ const err404 = require('../middleware/404.js');
 
 #### UML
 
-![UML Diagram](whiteboardclass12.jpg)
+![UML Diagram](whiteboardclass13.jpg)
