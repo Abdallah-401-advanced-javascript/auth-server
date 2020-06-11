@@ -1,5 +1,4 @@
-# LAB - 13
-
+# LAB - 14
 <!-- ## Project: Project Name Here -->
 ## OAuth Server
 
@@ -7,9 +6,9 @@
 
 ### Links and Resources
 
-* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/3)
-* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/3/checks?check_run_id=756266336)
-* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/3/checks?check_run_id=756268588)
+* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/)
+* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/checks?check_run_id=760151157)
+* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/checks?check_run_id=760151228)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
 <!-- * [front-end application](https://abdallah-lab-00.herokuapp.com/)  -->
 
@@ -18,7 +17,7 @@
 <!-- * [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1)  -->
 
 ### Modules
-#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js`, `bearer-auth-middleware.js`.
+#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js`, `bearer-auth-middleware.js`,`authorize`.
 ##### Exported Values and Methods
 
 ###### `node index.js `
@@ -41,6 +40,8 @@ This will authinticate the login process
 This will make an authorization for the client from third-party.
 ###### `bearer-auth-middleware.js`
 This middleware will use baerer jwt to check authorization for the client before send it to the main function in the route.
+###### `authorize`
+This will check if the user has the privilege to access a route.
 
 ### Setup
 
@@ -65,6 +66,7 @@ API_SERVER=http://localhost:3030/oauth
 const basic = require(../'basic-auth-midddleware.js');
 const oauth = require('../oauth-middleware');
 const bearerMiddleware = require('../bearer-auth-middleware');
+const bearerMiddleware = require('../authorize');
 const Model = require('../model');
 const users = require('../models/products/users-model');
 const err500 = require('../middleware/500.js');
@@ -79,4 +81,4 @@ const err404 = require('../middleware/404.js');
 
 #### UML
 
-![UML Diagram](whiteboardclass13.jpg)
+![UML Diagram](whiteboardclass14.jpg)

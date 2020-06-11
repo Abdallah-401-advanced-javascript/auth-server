@@ -5,6 +5,7 @@ const router = express.Router();
 const users = require('./users');
 const basicAuth = require('./middleware/basic-auth-middleware');
 const oath = require('./middleware/oauth-middleware');
+// const { read } = require('./models/users/users-model');
 // const mongoDB = require('./models/users/users-model');
 
 router.post('/signup',signup);
@@ -13,6 +14,7 @@ router.get('/users',list);
 router.get('/oauth', oath, (req, res)=> {
   res.status(200).send(req.token);
 });
+
 /**
  * 
  * @param {obj} req 
@@ -25,7 +27,9 @@ function signup(req, res, next) {
   console.log(user);
   users.save(user).then(result => {
     // generate a token and return it.
-    let token = users.generateToken(result);
+    let token = users.generateTokenUp(result);
+    console.log('generated token',token);
+    // req.token=token;
     res.cookie(token);
     res.status(200).send(token);
   }).catch(err=> {

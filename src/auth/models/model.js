@@ -18,7 +18,9 @@ class Model {
   read(_id) {
     let queryObject = _id!==undefined ? {username:_id} : {};
     // .find(queryObject) : {_id: _id}, {}
-    return this.schema.find(queryObject);
+    
+    // return this.schema.find(queryObject);
+    return this.schema.find( queryObject);
   }
   /**
      * 
